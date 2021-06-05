@@ -1,0 +1,199 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+.faq-background {
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background: linear-gradient(#af67e9, #6565e7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+
+.faq-card {
+  background: white;
+  min-height: 510px;
+  max-width: 920px;
+  border-radius: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.image-pattern {
+  position: absolute;
+  top: -300px;
+  left: -575px;
+}
+
+.woman-online {
+  -webkit-transform: translateX(-17%);
+          transform: translateX(-17%);
+}
+
+.illustration-box {
+  position: absolute;
+  bottom: calc(-140px + (50*1vh));
+  left: calc(-560px + (50*1vw));
+  z-index: 1;
+}
+
+.card-info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  z-index: 2;
+  padding: 3rem 0;
+  min-height: 500px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card-info h2 {
+  margin-bottom: 4rem;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.card-tabs {
+  overflow: hidden;
+  max-width: 80%;
+  min-height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card-tab {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: #e7e7e9 solid 1px;
+}
+
+.card-tab label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 2rem 0rem;
+  cursor: pointer;
+}
+
+.card-tab label:hover {
+  color: #f47c57;
+}
+
+.card-tab label::after {
+  content: url("../images/icon-arrow-down.svg");
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.card-tab .tab-content {
+  max-height: 0;
+  padding: 0;
+  background: white;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+input:checked + .tab-label {
+  font-weight: bold;
+}
+
+input:checked + .tab-label::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+input:checked ~ .tab-content {
+  max-height: 100vh;
+  padding-bottom: 2rem;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,125 @@
+//Text colors
+$very-dark-grayish-blue: hsl(237, 12%, 33%);
+$grayish-blue: hsl(240, 6%, 50%);
+$dark-blue: hsl(238, 29%, 16%);
+$soft-red: hsl(14, 88%, 65%);
+//Gradient colors
+$soft-violet: hsl(273, 75%, 66%);
+$soft-blue: hsl(240, 73%, 65%);
+//Dividers
+$light-grayish-blue: hsl(240, 5%, 91%);
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@import "./global";
+
+.faq-background {
+    min-height: 100vh;
+    background: linear-gradient($soft-violet, $soft-blue);
+    @include flex(center ,center, row);
+    position: relative;
+}
+
+.faq-card {
+    background: white;
+    min-height: 510px;
+    max-width: 920px;
+    border-radius: 2rem;
+    @include flex(center, center, row);
+    position: relative;
+    overflow: hidden;
+}
+.card-image {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.image-pattern {
+    position: absolute;
+    top: -300px;
+    left: -575px;
+}
+
+.woman-online {
+    transform: translateX(-17%);
+    
+}
+
+.illustration-box {
+    position: absolute;
+    bottom: calc(-140px + (50*1vh));
+    left: calc(-560px + (50*1vw));
+    z-index: 1;
+}
+
+.card-info {
+    flex: 1;
+    z-index: 2;
+    padding: 3rem 0;
+    min-height: 500px;
+    width: 100%;
+    @include flex(center, flex-start, column);
+    h2 {
+        margin-bottom: 4rem;
+    }
+
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.card-tabs {
+  overflow: hidden;
+  max-width: 80%;
+  min-height: 60%;
+  @include flex(space-between,flex-start, column);
+}
+
+.card-tab {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: $light-grayish-blue solid 1px;
+  label {
+    @include flex(space-between, flex-start, row);
+    margin: 2rem 0rem; 
+    cursor: pointer;
+    &:hover {
+      color: $soft-red;
+    }
+    &::after {
+      content: url('../images/icon-arrow-down.svg');
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      transition: all 0.15s;
+    }
+  }
+  .tab-content {
+    max-height: 0;
+    padding: 0;
+    background: white;
+    transition: all 0.5s;
+  }
+}
+
+input:checked {
+    +.tab-label {
+        font-weight: bold;
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+    ~.tab-content {
+        max-height: 100vh;
+        padding-bottom: 2rem;
+    }
+}
